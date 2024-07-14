@@ -1,11 +1,6 @@
 # 📊 Previsão de Estoque Inteligente na AWS com [SageMaker Canvas](https://aws.amazon.com/pt/sagemaker/canvas/)
 
-Bem-vindo ao desafio de projeto "Previsão de Estoque Inteligente na AWS com SageMaker Canvas. Neste Lab DIO, você aprenderá a usar o SageMaker Canvas para criar previsões de estoque baseadas em Machine Learning (ML). Siga os passos abaixo para completar o desafio!
-
-## 📋 Pré-requisitos
-
-Antes de começar, certifique-se de ter uma conta na AWS. Se precisar de ajuda para criar sua conta, confira nosso repositório [AWS Cloud Quickstart](https://github.com/digitalinnovationone/aws-cloud-quickstart).
-
+Bem-vindo ao desafio de projeto "Previsão de Estoque Inteligente na AWS com SageMaker Canvas. Neste Lab DIO, você aprenderá a usar o SageMaker Canvas para criar previsões de estoque baseadas em Machine Learning.
 
 ## 🎯 Objetivos Deste Desafio de Projeto (Lab)
 
@@ -20,28 +15,24 @@ Antes de começar, certifique-se de ter uma conta na AWS. Se precisar de ajuda p
 
 ### 1. Selecionar Dataset
 
--   Navegue até a pasta `datasets` deste repositório. Esta pasta contém os datasets que você poderá escolher para treinar e testar seu modelo de ML. Sinta-se à vontade para gerar/enriquecer seus próprios datasets, quanto mais você se engajar, mais relevante esse projeto será em seu portfólio.
--   Escolha o dataset que você usará para treinar seu modelo de previsão de estoque.
--   Faça o upload do dataset no SageMaker Canvas.
+- dataset-1000-com-preco-promocional-e-renovacao-estoque.csv
 
 ### 2. Construir/Treinar
 
--   No SageMaker Canvas, importe o dataset que você selecionou.
--   Configure as variáveis de entrada e saída de acordo com os dados.
--   Inicie o treinamento do modelo. Isso pode levar algum tempo, dependendo do tamanho do dataset.
+- Coluna-alvo => PREÇO
+- Tipo de modelo => previsão de séries temporais
+- Objetivo: Analisar o impacto da variação de preços no estoque dos produtos
 
 ### 3. Analisar
 
--   Após o treinamento, examine as métricas de performance do modelo.
--   Verifique as principais características que influenciam as previsões.
--   Faça ajustes no modelo se necessário e re-treine até obter um desempenho satisfatório.
+- Avg.wQL=> 0.069
+- WAPE => 0.111
+- RMSE => 1.699
+- MAPE => 0.121
+- MASE => 0.881
+- Impacto em QUANTIDADE_ESTOQUE => 46.19%
 
 ### 4. Prever
 
--   Use o modelo treinado para fazer previsões de estoque.
--   Exporte os resultados e analise as previsões geradas.
--   Documente suas conclusões e qualquer insight obtido a partir das previsões.
-
-## 🤔 Dúvidas?
-
-Esperamos que esta experiência tenha sido enriquecedora e que você tenha aprendido mais sobre Machine Learning aplicado a problemas reais. Se tiver alguma dúvida, não hesite em abrir uma issue neste repositório ou entrar em contato com a equipe da DIO.
+- Com base nos indicadores fornecidos (Avg.wQL: 0.069, MAPE: 0.121, WAPE: 0.111, RMSE: 1.699, MASE: 0.881, Impacto em QUANTIDADE_ESTOQUE: 46.19%), observa-se que, em média, todos os produtos apresentam uma redução significativa no estoque. Em alguns casos, o estoque pode diminuir até 50% do valor original. 
+- Portanto, há uma correlação direta entre a redução de preço ao longo do tempo e o aumento na quantidade de itens comprados. É importante notar que esta análise não considera variações sazonais, como datas festivas, nem produtos que possam estar em alta demanda temporária.
