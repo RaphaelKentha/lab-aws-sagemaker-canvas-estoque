@@ -14,7 +14,7 @@ Bem-vindo ao desafio de projeto "Previsão de Estoque Inteligente na AWS com Sag
 
 ### 2. Construir/Treinar
 
-- Coluna-alvo => PREÇO
+- Coluna-alvo => PRECO
 - Tipo de modelo => previsão de séries temporais
 - Objetivo: Analisar o impacto da variação de preços no estoque dos produtos
 
